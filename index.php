@@ -7,10 +7,7 @@ require 'class.iCalReader.php';
 
 $urls = json_decode(file_get_contents('./url.json', FILE_USE_INCLUDE_PATH));
 
-$newCal = "BEGIN:VCALENDAR"
-    . "\r\nVERSION:2.0"
-    . "\r\nPRODID:v1.0//EN"
-    . "\r\nCALSCALE:GREGORIAN";
+$newCal = "BEGIN:VCALENDAR";
 foreach ($urls as $url) {
     $ical = new ICal($url);
     $events = $ical->events();
